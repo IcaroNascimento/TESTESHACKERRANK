@@ -1,9 +1,6 @@
 const assert = require('assert');
 
 function diagonalDifference(inputMatrix) {
-	// let leftToRight = inputMatrix[0][0] + inputMatrix[1][1] + inputMatrix[2][2];
-	// let rightToLeft = inputMatrix[0][2] + inputMatrix[1][1] + inputMatrix[2][0];
-
 		let leftToRight = 0
 		let rightToLeft = 0
 	
