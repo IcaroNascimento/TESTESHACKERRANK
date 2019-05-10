@@ -1,33 +1,11 @@
 const assert = require('assert');
 
 function utopianTree(n) {
-	//Solution 1
-	// if (n === 1) {
-	// 	return 2;
-	// }
-	// if (n === 4) {
-	// 	return 7;
-	// }
-	// if (n === 3) {
-	// 	return 6;
-	// }
-	// return 1;
-
-	//Solution 2
-	// if(n < 3){
-	//     return n + 1
-	// }
-	// return n + 3
-	
-
-	 for (let i = 0; i < 5; i++) {
-		if (i/2 == 0) {
-			 i + 1;
-		} else{
-			i * 2;
-		}
-	 }
-	 return
+	let height = 0;
+	for (let i = 0; i < n; i++) {
+		height = height + (i / 2 !== 0 ? 1 : height);
+	}
+	return height;
 }
 
 
