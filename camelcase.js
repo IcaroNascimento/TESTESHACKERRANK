@@ -1,9 +1,7 @@
 const assert = require('assert');
 
 function camelCase(string) {
-	const splitUpercase = string.split(/[ˆA-Z]/g);
-
-	return splitUpercase.length;
+	return string.split(/[ˆA-Z]/g).length;
 }
 
 assert.equal(camelCase('one'), 1);
