@@ -13,9 +13,6 @@ function plusMinus(arr) {
     return [countPositive, countNegative, countZero].map(element =>
             (element / arr.length).toFixed(6)
             ).join(', ')
-//  `${(countPositive / arr.length).toFixed(6)}, ${(countNegative / arr.length).toFixed(6)}, ${(countZero /
-// 		arr.length).toFixed(6)}`;
-    
 }
 
 assert.equal(plusMinus([ 1, 1, 0, -1, -1 ]), '0.400000, 0.400000, 0.200000');
