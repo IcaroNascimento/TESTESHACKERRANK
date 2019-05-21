@@ -1,24 +1,20 @@
 const assert = require('assert');
 
 function plusMinus(arr) {
-	let countPositive = 0;
-	let countNegative = 0;
-	let countZero = 0;
-
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] > 0) {
-			countPositive += 1;
-		}
-		if (arr[i] < 0) {
-			countNegative += 1;
-		}
-		if (arr[i] === 0) {
-			countZero += 1;
-		}
-	}
-
-return `${(countPositive / arr.length).toFixed(6)}, ${(countNegative / arr.length).toFixed(6)}, ${(countZero /
-		arr.length).toFixed(6)}`;
+	let countPositive = countNegative = countZero = 0;
+		
+        arr.forEach(element => {
+         (element > 0) 
+            ? countPositive += 1 
+            : (element < 0) 
+                ? countNegative += 1
+                : countZero += 1
+        });
+    return [countPositive, countNegative, countZero].map(element =>
+            (element / arr.length).toFixed(6)
+            ).join(', ')
+//  `${(countPositive / arr.length).toFixed(6)}, ${(countNegative / arr.length).toFixed(6)}, ${(countZero /
+// 		arr.length).toFixed(6)}`;
     
 }
 
