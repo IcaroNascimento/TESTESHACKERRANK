@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "name": "test",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest"
+  }
+}
+
+
