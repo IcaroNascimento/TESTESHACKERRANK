@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 function compareTheTriplets(arr) {
 	let countAlice = 0;
 	let countBob = 0;
@@ -16,9 +14,4 @@ function compareTheTriplets(arr) {
 	return [ countAlice, countBob ];
 }
 
-assert.deepEqual(compareTheTriplets([ [ 1, 2, 3 ], [ 3, 2, 1 ] ]), [ 1, 1 ]);
-assert.deepEqual(compareTheTriplets([ [ 5, 7, 7 ], [ 3, 6, 10 ] ]), [ 2, 1 ]);
-assert.deepEqual(compareTheTriplets([ [ 5, 7, 13 ], [ 3, 6, 10 ] ]), [ 3, 0 ]);
-assert.deepEqual(compareTheTriplets([ [ 5, 6, 7 ], [ 3, 6, 10 ] ]), [ 1, 1 ]);
-
-console.log('Ok');
+module.exports = compareTheTriplets;
