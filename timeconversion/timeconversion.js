@@ -1,6 +1,3 @@
-const assert = require('assert');
-
-
 function timeConversion(inputTime) {
   const postMorning = inputTime.endsWith('PM');
 
@@ -16,3 +13,5 @@ function timeConversion(inputTime) {
 
   return `${String(hours).padStart(2, '0')}${minutesAndSeconds}`;
 }
+
+module.exports = timeConversion
