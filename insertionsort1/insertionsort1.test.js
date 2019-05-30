@@ -7,5 +7,5 @@ test('when the sequency  is "2, 4, 6, 8, 7", return the output  "\n2 4 6 8 8 \n2
 	expect(insertionSort1(5, [2, 4, 6, 8, 7])).toEqual('2 4 6 8 8 \n2 4 6 7 8');
 });
 test('when the sequency  is "2, 3, 4, 7, 8", return the output  "2 3 4 7 8"', () => {
-	expect(insertionSort1(15 [2, 3, 4, 7, 8 ])).toEqual('2 3 4 7 8');
+	expect(insertionSort1(5 [2, 3, 4, 7, 8 ])).toEqual('2 3 4 7 8');
 });

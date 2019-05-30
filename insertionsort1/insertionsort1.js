@@ -1,18 +1,29 @@
-function insertionSort1(n, arr) {
-// let arrShift = 0
-//     for (let index = arr.length - 1; i >= 0 ; index i -- ) {
-//        if (arr[i] > arr [i - 1]){
-//            arrMove = arr[]
-//        }
-        
-//     }
+const assert = require('assert');
 
-	if (n === 5) {
-		return '2 4 6 8 8 \n2 4 6 6 8 \n2 4 4 6 8 \n2 3 4 6 8';
-	} else if (n === 2) {
-		return '2 4 6 8 8 \n2 4 6 7 8';
+function insertionSort1(n, arr) {
+let escolhido =0
+
+	for ( i = 1; i < arr.length; i++) {
+		 escolhido = arr[i];
+		 j = i - 1;
+		
+		while ((j >= 0) && (arr[j] > escolhido)) {
+			arr[j + 1] = arr[j];
+			j--;
+		}
+		
+		arr[j + 1] = escolhido;
 	}
-	return '2 3 4 7 8';
+
+
+	return arr;
 }
+
+assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 3 ]), [ 2, 3, 4, 6, 8 ]);
+assert.deepEqual(insertionSort1(5, [ 2, 6, 4, 8, 3 ]), [ 2, 3, 4, 6, 8 ]);
+
+
+
+console.log('ok');
 
 module.exports = insertionSort1;
