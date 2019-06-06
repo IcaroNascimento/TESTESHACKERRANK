@@ -1,34 +1,54 @@
 const assert = require('assert');
 
 // '2 4 6 8 3'
-function imprimeArray(n, arr) {
-	let result = ''
-	for (let i = 0; i < n; i++) {
-		result += arr[i];
-		if (i + 1 < n) {
-			result += ' ';
+function imprimeArray(tamanho, arr) {
+	let resultado = ''
+	for (let i = 0; i < tamanho; i++) {
+		resultado += arr[i];
+		let posDireita = i + 1
+		if (posDireita < tamanho) {
+			resultado += ' ';
 		}
 	}
-	return result
+	return resultado
 }
 
-function insertionSort1(n, arr) {
-	let escolhido = arr[n - 1];
-	let result = '';
+function insertionSort1(tamanho, arr) {
+	let posDesornado = tamanho - 1;
+	let desordenado = arr[tamanho - 1];
+	let resultado = '';
 
-	for (let i = n - 2 ; i >= 0; i--) {
-		if (arr[i] > escolhido) {
-			arr[i + 1] = arr[i];
-			result += imprimeArray(n, arr) + ' \n';
-		} else {
-			arr[i + 1] = escolhido;
-			result += imprimeArray(n, arr);
+	if (tamanho === 1) {
+		return resultado + arr[0];
+	}
+
+	for (let i = posDesornado - 1; i >= 0; i--) {
+		let posAtual = i;
+		let elementoAtual = arr[posAtual];
+		let posDireita = posAtual + 1;
+		let elementoDireita = arr[posDireita];
+		if (elementoAtual > desordenado) {
+			arr[posDireita] = elementoAtual;
+			resultado += imprimeArray(tamanho, arr) + ' \n';
+		}
+		if (elementoAtual <= desordenado) {
+			arr[posDireita] = desordenado;
+			resultado += imprimeArray(tamanho, arr);
+			break;
+		} else if (posAtual === 0) {
+			arr[posAtual] = desordenado;
+			resultado += imprimeArray(tamanho, arr);
+			break;
 		}
 	}
-	return result
+	return resultado;
 }
+
 assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 3 ]), '2 4 6 8 8 \n2 4 6 6 8 \n2 4 4 6 8 \n2 3 4 6 8');
-// assert.deepEqual(insertionSort1(5, [ 2, 6, 4, 8, 3 ]), [ 2, 3, 4, 6, 8 ]);
+assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 1 ]), '2 4 6 8 8 \n2 4 6 6 8 \n2 4 4 6 8 \n2 2 4 6 8 \n1 2 4 6 8');
+assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 6 ]), '2 4 6 8 8 \n2 4 6 6 8');
+assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 10 ]), '2 4 6 8 10');
+assert.deepEqual(insertionSort1(1, [ 1 ]), '1');
 
 console.log('ok');
 
