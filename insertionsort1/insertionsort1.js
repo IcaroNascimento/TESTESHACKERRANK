@@ -1,28 +1,34 @@
 const assert = require('assert');
 
-function insertionSort1(n, arr) {
-let escolhido =0
-
-	for ( i = 1; i < arr.length; i++) {
-		 escolhido = arr[i];
-		 j = i - 1;
-		
-		while ((j >= 0) && (arr[j] > escolhido)) {
-			arr[j + 1] = arr[j];
-			j--;
+// '2 4 6 8 3'
+function imprimeArray(n, arr) {
+	let result = ''
+	for (let i = 0; i < n; i++) {
+		result += arr[i];
+		if (i + 1 < n) {
+			result += ' ';
 		}
-		
-		arr[j + 1] = escolhido;
 	}
-
-
-	return arr;
+	return result
 }
 
-assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 3 ]), [ 2, 3, 4, 6, 8 ]);
-assert.deepEqual(insertionSort1(5, [ 2, 6, 4, 8, 3 ]), [ 2, 3, 4, 6, 8 ]);
+function insertionSort1(n, arr) {
+	let escolhido = arr[n - 1];
+	let result = '';
 
-
+	for (let i = n - 2 ; i >= 0; i--) {
+		if (arr[i] > escolhido) {
+			arr[i + 1] = arr[i];
+			result += imprimeArray(n, arr) + ' \n';
+		} else {
+			arr[i + 1] = escolhido;
+			result += imprimeArray(n, arr);
+		}
+	}
+	return result
+}
+assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 3 ]), '2 4 6 8 8 \n2 4 6 6 8 \n2 4 4 6 8 \n2 3 4 6 8');
+// assert.deepEqual(insertionSort1(5, [ 2, 6, 4, 8, 3 ]), [ 2, 3, 4, 6, 8 ]);
 
 console.log('ok');
 
