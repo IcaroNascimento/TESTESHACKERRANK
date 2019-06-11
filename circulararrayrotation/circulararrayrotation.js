@@ -1,14 +1,14 @@
 const assert = require('assert');
 
-
 function circularArrayRotation(a, k, queries) {
-	// quantidade de k(rotações)
-	while (k--) {
+	const meta = k % a.length;
+
+	for (let index = 0; index < meta; index++) {
 		a.unshift(a.pop());
 	}
-	const result = []
-	queries.forEach(index => {
-		result.push(a[index])
+	const result = [];
+	queries.forEach((index) => {
+		result.push(a[index]);
 	});
 	return result.join(' \n');
 }
