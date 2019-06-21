@@ -7,4 +7,3 @@ test('getElementOccurrences should transform an array into an object with elemen
 	expect(getElementOccurrences([3,3],
 		)).toStrictEqual({3:2});	
 });
-
