@@ -1,11 +1,17 @@
 function getElementOccurrences(array) {
-	let count = 0;
-	let obj = {};
-	for (let i = 0; i < array.length; i++) {
-		count += 1;
+	let obj = {}
+	for (let i = 0; i < array.length; i++) { 
+		if (obj[array[i]] = obj[array[i]]) {
+			obj[array[i]] += 1 
+			}
+			else{
+			 obj[array[i]] = 1
+			}	
 	}
 
-	return { 3: count };
+	return obj
+
 }
+
 
 module.exports = { getElementOccurrences };
