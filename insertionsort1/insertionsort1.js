@@ -1,6 +1,3 @@
-const assert = require('assert');
-
-// '2 4 6 8 3'
 function imprimeArray(tamanho, arr) {
 	let resultado = ''
 	for (let i = 0; i < tamanho; i++) {
@@ -43,13 +40,5 @@ function insertionSort1(tamanho, arr) {
 	}
 	return resultado;
 }
-
-assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 3 ]), '2 4 6 8 8 \n2 4 6 6 8 \n2 4 4 6 8 \n2 3 4 6 8');
-assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 1 ]), '2 4 6 8 8 \n2 4 6 6 8 \n2 4 4 6 8 \n2 2 4 6 8 \n1 2 4 6 8');
-assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 6 ]), '2 4 6 8 8 \n2 4 6 6 8');
-assert.deepEqual(insertionSort1(5, [ 2, 4, 6, 8, 10 ]), '2 4 6 8 10');
-assert.deepEqual(insertionSort1(1, [ 1 ]), '1');
-
-console.log('ok');
 
 module.exports = insertionSort1;
