@@ -1,28 +1,29 @@
-function getElementOccurrences(array) {
-	let obj = {};
-	for (let i = 0; i < array.length; i++) {
-		const key = array[i];
-		const value = obj[key];
-		obj[key] = value ? value + 1 : 1;
-	}
-
-	return obj;
-}
-
 function missingNumbers(arrayA, arrayB) {
-	let occurrencesArrayA = getElementOccurrences(arrayA);
-	let occurrencesArrayB = getElementOccurrences(arrayB);
-	let entriesA = Object.entries(occurrencesArrayA);
-	let entriesB = Object.entries(occurrencesArrayB);
 	let result = [];
-	for (let i = 0; i < entriesB.length; i++) {
-		if (entriesB[i][1] !== entriesA[i][1]) {
-			let arraKeyNumber = Number(entriesB[i][0]);
-			result.push(arraKeyNumber);
+	let j = 0;
+	for (let i = 0; i < arrayA.length; i++) {
+		while (arrayA[i] !== arrayB[j]) {
+			if (!result.includes(arrayB[j])) {
+				result.push(arrayB[j]);
+			}
+			j += 1;
+		}
+		j += 1;
+
+		if (arrayB.length - 1 === j) {
+			if (arrayA[i] !== arrayB[j]){
+			result.push(arrayB[j]);
+			};
+			
+		}
+		if (result[result.length - 1] < result[result.length - 2]) {
+			auxiliar = result[result.length - 1];
+			result[result.length - 1] = result[result.length - 2];
+			result[result.length - 2] = auxiliar;
 		}
 	}
 
 	return result;
 }
 
-module.exports = { getElementOccurrences, missingNumbers };
+module.exports = { missingNumbers };
