@@ -1,12 +1,4 @@
-const getElementOccurrences = require('./missingnumbers').getElementOccurrences;
 const missingNumbers = require('./missingnumbers').missingNumbers;
-
-// test('getElementOccurrences should transform an array into an object with element ocurrences ', () => {
-// 	expect(getElementOccurrences([ 3 ])).toStrictEqual({ 3: 1 });
-// 	expect(getElementOccurrences([ 3, 3 ])).toStrictEqual({ 3: 2 });
-// 	expect(getElementOccurrences([ 3, 3, 4 ])).toStrictEqual({ 3: 2, 4: 1 });
-// 	expect(getElementOccurrences([ 3, 3, 4, 44 ])).toStrictEqual({ 3: 2, 4: 1, 44: 1 });
-// });
 
 test('missingNumbers should compare two array and identify elements with differents amounts  ', () => {
 	expect(
@@ -21,4 +13,10 @@ test('missingNumbers should compare two array and identify elements with differe
 			[ 11, 4, 11, 7, 3, 7, 10, 13, 4, 8, 12, 11, 10, 14, 12 ]
 		)
 	).toStrictEqual([ 3, 7, 8, 10, 12 ]);
+	expect(
+		missingNumbers(
+			[ 7, 2, 5, 3, 5, 3 ],
+			[ 7, 2, 5, 4, 6, 3, 5, 3 ]		
+		)
+	).toStrictEqual([4, 6]);
 });
