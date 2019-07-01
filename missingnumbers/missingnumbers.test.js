@@ -9,24 +9,12 @@ const missingNumbers = require('./missingnumbers').missingNumbers;
 // });
 
 test('missingNumbers should compare two array and identify elements with differents amounts  ', () => {
-	// expect(
-	// 	missingNumbers(
-	// 		[ 203, 204, 205, 206, 207, 208, 203, 204, 205, 206 ],
-	// 		[ 203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204 ]
-	// 	)
-	// ).toStrictEqual([ 204, 205, 206 ]);
-	// expect(
-	// 	missingNumbers(
-	// 		[ 3, 4, 5, 6, 7, 8, 3, 4, 5, 6 ],
-	// 		[ 3, 4, 4, 5, 6, 7, 5, 8, 3, 6, 5, 6, 4 ]
-	// 	)
-	// ).toStrictEqual([ 4, 5, 6 ]);
-	// expect(
-	// 	missingNumbers(
-	// 		[ 6, 7, 8, 3, 4, 5, 6 ],
-	// 		[ 6, 7, 5, 8, 3, 6, 5, 6, 4 ]
-	// 	)
-	// ).toStrictEqual([ 5, 6 ]);
+	expect(
+		missingNumbers(
+			[ 203, 204, 205, 206, 207, 208, 203, 204, 205, 206 ],
+			[ 203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204 ]
+		)
+	).toStrictEqual([ 204, 205, 206 ]);
 	expect(
 		missingNumbers(
 			[ 11, 4, 11, 7, 13, 4, 12, 11, 10, 14 ],
